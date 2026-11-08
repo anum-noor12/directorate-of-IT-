@@ -1,0 +1,96 @@
+.reveal-ready {
+  will-change: opacity, transform;
+}
+
+.reveal-ready.reveal-from-left {
+  transform: translate3d(-28px, 0, 0);
+}
+
+.reveal-ready.reveal-from-right {
+  transform: translate3d(28px, 0, 0);
+}
+
+.reveal-ready.is-visible {
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.manifesto-cards .pillars article {
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(.2, .7, .2, 1),
+    box-shadow 300ms ease;
+}
+
+.manifesto-cards .pillars article:hover {
+  box-shadow: 0 16px 36px rgb(7 63 48 / 10%);
+}
+
+.roadmap .project,
+.tech-grid article,
+.footer-contact li,
+.related-portals > a,
+.social-labels > a {
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(.2, .7, .2, 1),
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    color 250ms ease;
+}
+
+.tech-grid article:hover {
+  transform: translateY(-5px);
+}
+
+.footer-contact li:hover {
+  transform: translateX(4px);
+}
+
+.related-portals > a:hover {
+  transform: translateY(-2px);
+}
+
+.social-labels > a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgb(0 0 0 / 18%);
+}
+
+.motion-paused .reveal-ready,
+.motion-paused .reveal-ready.reveal-from-left,
+.motion-paused .reveal-ready.reveal-from-right {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready,
+  .reveal-ready.reveal-from-left,
+  .reveal-ready.reveal-from-right,
+  .reveal-ready.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .manifesto-cards .pillars article,
+  .roadmap .project,
+  .tech-grid article,
+  .footer-contact li,
+  .related-portals > a,
+  .social-labels > a {
+    transition: none;
+  }
+
+  .manifesto-cards .pillars article:hover,
+  .tech-grid article:hover,
+  .footer-contact li:hover,
+  .related-portals > a:hover,
+  .social-labels > a:hover {
+    transform: none;
+  }
+}
