@@ -4,3 +4,18 @@
   object-fit: cover;
   object-position: center 24%;
 }
+
+.director-editorial .director-portrait figcaption {
+  right: auto;
+  width: max-content;
+  max-width: 88%;
+  align-items: flex-start;
+  padding: 24px 18px 24px 9%;
+}
+
+@media (max-width: 600px) {
+  .director-editorial .director-portrait figcaption {
+    max-width: 92%;
+    padding: 20px 14px 20px 7%;
+  }
+}

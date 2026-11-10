@@ -185,3 +185,202 @@ video {
 .nav-contact {
   background-color: var(--gold);
 }
+
+.hero .actions .button,
+.hero .actions .text-link {
+  min-height: 52px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 20px;
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero .actions .text-link {
+  text-decoration: none;
+}
+
+.hero .actions .button:hover,
+.hero .actions .button:focus,
+.hero .actions .button:active,
+.hero .actions .text-link:hover,
+.hero .actions .text-link:focus,
+.hero .actions .text-link:active {
+  background-color: var(--gold);
+  color: var(--green);
+}
+
+.hero .actions .button:focus-visible,
+.hero .actions .text-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+header {
+  height: 92px;
+  min-height: 92px;
+  width: 100%;
+  margin: 0;
+  padding-right: 5%;
+  padding-left: 5%;
+  gap: clamp(10px, 1.4vw, 20px);
+  background: #fff;
+  color: var(--green);
+  border-bottom-color: #e5e9e5;
+}
+
+header .brand {
+  display: flex;
+  flex: 0 1 290px;
+  max-width: min(32vw, 290px);
+  min-width: 0;
+  align-items: center;
+}
+
+.official-logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 68px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+header nav {
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(12px, 1.6vw, 24px);
+  min-width: 0;
+}
+
+header nav a {
+  white-space: nowrap;
+}
+
+#menu {
+  color: var(--green);
+  border-color: rgb(7 63 48 / 35%);
+}
+
+nav a,
+nav a:visited,
+nav .nav-contact {
+  color: var(--green);
+  font-weight: 700;
+}
+
+nav a {
+  transition: color 180ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a:active,
+nav a.active {
+  color: #b8860b;
+}
+
+nav a.active::after {
+  background: #b8860b;
+}
+
+nav .nav-contact {
+  background: transparent;
+}
+
+.roadmap .section-heading {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.roadmap .initiative-arrow {
+  width: 34px;
+  height: 34px;
+  border-color: rgb(197 155 75 / 70%);
+  background: #fff;
+  color: #997019;
+  box-shadow: 0 2px 8px rgb(7 63 48 / 8%);
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.roadmap .project:hover .initiative-arrow,
+.roadmap .project summary:focus-visible .initiative-arrow,
+.roadmap .project:active .initiative-arrow,
+.roadmap .project[open] .initiative-arrow {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--green);
+  box-shadow: 0 4px 12px rgb(7 63 48 / 16%);
+}
+
+.roadmap .project:hover .initiative-arrow {
+  transform: translateY(-50%) translateX(2px);
+}
+
+.roadmap .project[open] .initiative-arrow {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.roadmap .project[open]:hover .initiative-arrow {
+  transform: translateY(-50%) rotate(90deg) translateX(2px);
+}
+
+@media (max-width: 760px) {
+  header {
+    height: 62px;
+    min-height: 62px;
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+    gap: 12px;
+  }
+
+  header .brand {
+    flex: 0 1 auto;
+    max-width: calc(100% - 58px);
+  }
+
+  .official-logo {
+    width: clamp(190px, 66vw, 245px);
+    height: auto;
+    max-height: 56px;
+  }
+
+  header nav {
+    top: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  header {
+    height: 62px;
+    min-height: 62px;
+  }
+
+  .official-logo {
+    width: min(62vw, 245px);
+    height: auto;
+    max-height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a,
+  .roadmap .initiative-arrow {
+    transition: none;
+  }
+}

@@ -2,7 +2,6 @@ const menu=document.querySelector('#menu'),nav=document.querySelector('#nav');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
 const cards=[...document.querySelectorAll('.project')];cards.forEach((c,i)=>c.id=`project-${i+1}`);
-const filter=document.querySelector('#category');filter.addEventListener('change',()=>{let count=0;cards.forEach(c=>{c.hidden=filter.value!=='All initiatives'&&c.dataset.category!==filter.value;if(!c.hidden){count++;c.classList.add('is-visible')}});document.querySelector('#count').textContent=`Showing ${count} of 15 initiatives · Select an initiative to explore its scope.`});
 const links=[...nav.querySelectorAll('a')];
 const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(a=>{const active=a.hash==='#'+entry.target.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})})},{rootMargin:'-20% 0px -55% 0px',threshold:0});document.querySelectorAll('main section[id]').forEach(s=>sectionObserver.observe(s));
 const motionQuery=matchMedia('(prefers-reduced-motion: reduce)');let paused=motionQuery.matches;const motionButton=document.querySelector('.motion-control');
